@@ -142,44 +142,4 @@ exports.register = (req, res) => {
         })
       );
     });
-};
-/*exports.register = (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const confirm_password = req.body.confirm_password;
-  const date = new Date();
-  const salt = bcrypt.genSaltSync(10);
-
-  // Check if username is exist
-  User.exists({ username: username })
-    .then((result) => {
-      if (!result) {
-        // if user not exist, user can register
-        const user = new User({
-          username: username,
-          password: bcrypt.hashSync(password, salt),
-          registerAt: date.toISOString()})
-          res.render("signin", {
-            error: true,
-            message: "User has created"
-            .save()
-          });
-          console.log(username);
-      } else {
-              // else return fail
-              res.render("signup", {
-                error: true,
-                message: "User already Exist!",
-              });
-            }
-          }
-        )
-        .catch((err) => {
-         console.log(
-        res.render("signup", {
-          error: true,
-          message: "User does already exist! ",
-        })
-      );
-    });
-};*/
+}
